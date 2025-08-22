@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Primo post"
-description: "Perché apro questo blog"
-tags: [introduzione]
+title: "First Post"
+description: "Why I’m starting this blog"
+tags: [introduction]
 ---
 
 
-Benvenuto nel mio primo articolo! 
+Welcome to my first article!
