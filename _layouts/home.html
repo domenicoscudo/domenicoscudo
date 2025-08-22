@@ -1,69 +1,79 @@
 ---
-layout: home
-title: Domenico Scudo
+layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  {{ content }}
+  <!-- Intro section -->
+  <header class="intro">
+    <h1 class="site-title">{{ page.title }}</h1>
+    <p class="site-description">
+      Welcome to my personal blog. I write about <strong>cloud technologies</strong>, 
+      <strong>cost optimization</strong>, and <strong>modern architectures</strong>.
+    </p>
+    <p>
+      Connect with me on 
+      <a href="https://www.linkedin.com/in/domenicoscudo/" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+  </header>
 
+  <!-- Main content (optional) -->
+  <section class="page-content">
+    {{ content }}
+  </section>
 
+  <!-- Blog posts -->
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
 
+  {% if posts.size > 0 %}
+    <section class="post-list">
+      <h2 class="post-list-heading">Latest Posts</h2>
+      <ul>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {% for post in posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {% if site.minima.show_excerpts %}
+              <p>{{ post.excerpt }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
 
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
+    <!-- Pagination -->
     {% if site.paginate %}
-      <div class="pager">
+      <nav class="pager">
         <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li>
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}">
-              {{ paginator.previous_page }}
-            </a>
-          </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li>
-            <a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}">
-              {{ paginator.next_page }}
-            </a>
-          </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
+          {% if paginator.previous_page %}
+            <li>
+              <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" 
+                 title="Go to Page {{ paginator.previous_page }}">
+                ‹ Prev
+              </a>
+            </li>
+          {% endif %}
+          <li><span class="current-page">Page {{ paginator.page }}</span></li>
+          {% if paginator.next_page %}
+            <li>
+              <a href="{{ paginator.next_page_path | relative_url }}" class="next-page" 
+                 title="Go to Page {{ paginator.next_page }}">
+                Next ›
+              </a>
+            </li>
+          {% endif %}
         </ul>
-      </div>
-    {%- endif %}
-  {%- endif -%}
-</div>
+      </nav>
+    {% endif %}
+  {% endif %}
 
+</div>
