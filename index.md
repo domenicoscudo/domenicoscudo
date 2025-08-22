@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Benvenuto nel mio blog
+title: Welcome to my blog
 ---
 
 
-Ciao! Questo è il mio sito su GitHub Pages. Troverai i miei articoli nella sezione **Blog**.
+Hi! This is my website on GitHub Pages. You’ll find my articles in the **Blog** section.
