@@ -12,8 +12,8 @@ This blog is where I share insights, notes, and experiments.
 
 ## Connect with me
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/domenicoscudo/)  
-- ✍️ [Medium](https://domenicoscudo.medium.com/)  
+- 💼 <a href="https://www.linkedin.com/in/domenicoscudo/" target="_blank">LinkedIn</a>  
+- ✍️ <a href="https://domenicoscudo.medium.com/" target="_blank">Medium</a>
 
 
 
