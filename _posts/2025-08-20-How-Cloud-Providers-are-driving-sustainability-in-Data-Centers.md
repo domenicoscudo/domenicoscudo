@@ -6,3 +6,7 @@ tags: [Cloud Sustainability, Green Data Center, Cloud Carbon Footprint, Green Cl
 ---
 
 # How Cloud Providers are driving sustainability in Data Centers
+
+
+
+<p><a href="https://medium.com/@domenicoscudo/how-cloud-providers-are-driving-sustainability-in-data-centers-b25e4300ead7" target="_blank" rel="noopener noreferrer">Read the full article</a></p>
